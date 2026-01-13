@@ -14,6 +14,11 @@ import { connectToDatabase } from "./db/mongo.js";
 import { User } from "./db/models/user.js";
 import { authRouter } from "./routes/auth.js";
 import { meRouter } from "./routes/me.js";
+import { topicsRouter } from "./routes/topics.js";
+import { questionsRouter } from "./routes/questions.js";
+import { attemptsRouter } from "./routes/attempts.js";
+import { emotionEventsRouter } from "./routes/emotionEvents.js";
+import { sessionsRouter } from "./routes/sessions.js";
 
 async function startServer() {
   await connectToDatabase();
@@ -46,6 +51,11 @@ async function startServer() {
 
   app.use("/auth", authRouter);
   app.use("/me", meRouter);
+  app.use("/topics", topicsRouter);
+  app.use("/questions", questionsRouter);
+  app.use("/attempts", attemptsRouter);
+  app.use("/emotion-events", emotionEventsRouter);
+  app.use("/sessions", sessionsRouter);
 
   const port = Number(process.env.PORT || 8080);
   app.listen(port, () => console.log(`API running on http://localhost:${port}`));
