@@ -128,9 +128,14 @@ export default function StudioPage() {
               Add topics, then draft questions with choices and difficulty. Uses the same API the learner consumes.
             </p>
           </div>
-          <Button type="button" variant="secondary" onClick={() => router.push("/dashboard")}>
-            Back to dashboard
-          </Button>
+          <div className="flex flex-wrap gap-2">
+            <Button type="button" variant="secondary" onClick={() => router.push("/dashboard")}>
+              Back to dashboard
+            </Button>
+            <Button type="button" variant="outline" onClick={() => router.push("/pdf-to-mcq")}>
+              PDF → MCQ Generator
+            </Button>
+          </div>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -256,7 +261,6 @@ export default function StudioPage() {
             </CardContent>
           </Card>
         </div>
-
         {status && (
           <div className="rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800 ring-1 ring-amber-200">{status}</div>
         )}
