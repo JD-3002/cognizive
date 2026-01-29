@@ -40,27 +40,27 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen px-6 py-12">
-      <div className="mx-auto max-w-5xl grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
-        <div className="rounded-3xl bg-slate-900 text-white p-8 shadow-xl shadow-slate-900/20 ring-1 ring-slate-800">
-          <p className="text-xs uppercase tracking-[0.2em] text-emerald-200/80">Module 1</p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight">Access & Identity</h1>
-          <p className="mt-3 text-sm text-slate-200 leading-relaxed">
-            Secure sign-in for Cognivize. Your session uses httpOnly cookies and JWT to keep the adaptive, emotion-aware
-            experience personalized. Logging in unlocks your dashboard, future engagement signals, and RL-tuned quizzes.
+      <div className="mx-auto max-w-5xl grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-start">
+        <div className="glass rounded-3xl bg-white/70 p-8">
+          <div className="eyebrow">Welcome back</div>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Sign in to Cognivize</h1>
+          <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+            Your session uses secure cookies with JWT. Once logged in, head to the dashboard, generate MCQs from PDFs,
+            and track adaptive progress.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <div className="text-xs text-emerald-200 font-semibold">Secure foundation</div>
-              <div className="mt-1 text-sm text-slate-100">Cookie-based JWT, CSRF-safe forms, rate-limited flows.</div>
+            <div className="rounded-2xl bg-emerald-50 p-4 ring-1 ring-emerald-100">
+              <div className="text-xs text-emerald-700 font-semibold">Secure foundation</div>
+              <div className="mt-1 text-sm text-slate-800">httpOnly cookies · CSRF-safe forms.</div>
             </div>
-            <div className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/10">
-              <div className="text-xs text-emerald-200 font-semibold">Next steps</div>
-              <div className="mt-1 text-sm text-slate-100">Engagement sensing + adaptive difficulty after sign-in.</div>
+            <div className="rounded-2xl bg-slate-900 text-white p-4 ring-1 ring-slate-800">
+              <div className="text-xs text-emerald-200 font-semibold">What’s inside</div>
+              <div className="mt-1 text-sm text-slate-100">Dashboard, Studio, PDF → MCQ, adaptive attempts.</div>
             </div>
           </div>
-          <div className="mt-6 text-sm text-emerald-100">
+          <div className="mt-6 text-sm text-slate-700">
             New here?{" "}
-            <Link className="underline font-semibold hover:text-white" href="/register">
+            <Link className="font-semibold text-emerald-700 hover:underline" href="/register">
               Create an account
             </Link>
           </div>
@@ -68,10 +68,7 @@ export default function LoginPage() {
 
         <div className="w-full max-w-xl lg:ml-auto">
           <Card>
-            <CardHeader
-              title="Welcome back"
-              subtitle="Log in to continue your adaptive learning journey."
-            />
+            <CardHeader title="Login" subtitle="Access your dashboard and start practicing." />
             <CardContent>
               <form className="space-y-4" onSubmit={onSubmit}>
                 <Input
@@ -102,7 +99,7 @@ export default function LoginPage() {
 
               <div className="mt-6 text-sm text-slate-600">
                 Don&apos;t have an account?{" "}
-                <Link className="text-slate-900 font-medium hover:underline" href="/register">
+                <Link className="text-emerald-700 font-semibold hover:underline" href="/register">
                   Create one
                 </Link>
               </div>

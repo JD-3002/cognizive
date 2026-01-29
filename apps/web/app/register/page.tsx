@@ -41,12 +41,41 @@ export default function RegisterPage() {
 
   return (
     <main className="min-h-screen px-6 py-12">
-      <div className="mx-auto max-w-5xl grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
-        <div className="w-full max-w-xl">
+      <div className="mx-auto max-w-5xl grid gap-8 lg:grid-cols-[1fr_1fr] items-start">
+        <div className="glass rounded-3xl bg-white/70 p-8">
+          <div className="eyebrow">New to Cognivize</div>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900">
+            Create an account and launch adaptive learning.
+          </h2>
+          <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+            One workspace for manual authoring, PDF → MCQ generation, and adaptive delivery. Your profile keeps progress
+            and difficulty curves in sync.
+          </p>
+          <div className="mt-6 space-y-3">
+            {[
+              { title: "AI content brain", desc: "Gemini drafts MCQs with explanations—edit before saving." },
+              { title: "Adaptive engine", desc: "Attempts and emotion signals shape the next question." },
+              { title: "Secure by default", desc: "httpOnly cookies, JWT, and CSRF-safe forms." },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+                <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+                <p className="mt-1 text-sm text-slate-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 text-sm text-slate-700">
+            Already have an account?{" "}
+            <Link className="font-semibold text-emerald-700 hover:underline" href="/login">
+              Login
+            </Link>
+          </div>
+        </div>
+
+        <div className="w-full max-w-xl lg:ml-auto">
           <Card>
             <CardHeader
               title="Create your account"
-              subtitle="Register to unlock your adaptive, emotion-aware learning workspace."
+              subtitle="Register to unlock adaptive dashboards and AI question generation."
             />
             <CardContent>
               <form className="space-y-4" onSubmit={onSubmit}>
@@ -85,45 +114,12 @@ export default function RegisterPage() {
 
               <div className="mt-6 text-sm text-slate-600">
                 Already have an account?{" "}
-                <Link className="text-slate-900 font-medium hover:underline" href="/login">
+                <Link className="text-emerald-700 font-semibold hover:underline" href="/login">
                   Login
                 </Link>
               </div>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="rounded-3xl bg-white/80 p-8 ring-1 ring-slate-200 shadow-xl shadow-slate-900/5 backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.2em] text-indigo-600 font-semibold">Cognivize Roadmap</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900">
-            Adaptive, emotion-aware teaching—your profile is the launchpad.
-          </h2>
-          <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-            Profiles tie together identity, engagement signals, and the adaptive engine. As you learn, we will adjust
-            difficulty, pace, and recommendations to keep you in flow.
-          </p>
-          <div className="mt-6 space-y-3">
-            {[
-              { title: "Engagement sensing", desc: "Webcam-powered signals to detect focus, confusion, or boredom." },
-              { title: "Adaptive tuning", desc: "RL-backed difficulty curves that respond to accuracy and time-on-task." },
-              { title: "Content brain", desc: "NLP-generated questions, summaries, and scaffolds based on your path." },
-            ].map((item) => (
-              <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold text-slate-900">{item.title}</p>
-                  <span className="text-xs font-semibold text-slate-500">Coming soon</span>
-                </div>
-                <p className="mt-1 text-sm text-slate-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 rounded-2xl bg-slate-900 px-5 py-4 text-white">
-            <div className="text-xs uppercase tracking-wide text-emerald-200/80">Why register</div>
-            <p className="mt-2 text-sm leading-relaxed">
-              Secure identity enables emotion-aware dashboards, adaptive quizzes, and personalized study plans tailored
-              to your signals.
-            </p>
-          </div>
         </div>
       </div>
     </main>
